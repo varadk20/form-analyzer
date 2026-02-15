@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bicep Curl Form Corrector</title>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/pose/pose.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+<body>
+    <div class="container">
+        <h1>🏋️ Bicep Curl Form Corrector(Front angle)</h1>
+
+        <div class="main-content">
+            <div class="video-section">
+                <video id="video" autoplay playsinline></video>
+                <canvas id="output_canvas"></canvas>
+                <div id="loading" class="loading">Loading camera and AI model...</div>
+            </div>
+
+            <div class="stats-panel">
+                <div class="stat-item">
+                    <div class="stat-label">Reps Count</div>
+                    <div class="stat-value" id="repCount">0</div>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-label">Current Stage</div>
+                    <div class="stage-indicator" id="stage">Starting</div>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-label">Left Arm Angle</div>
+                    <div class="angle-display" id="leftAngle">--°</div>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-label">Right Arm Angle</div>
+                    <div class="angle-display" id="rightAngle">--°</div>
+                </div>
+
+                <div class="stat-item">
+                    <div class="stat-label">Efficiency (after 10 reps)</div>
+                    <div class="angle-display" id="efficiencyScore">--%</div>
+                </div>
+
+                <div class="feedback-section">
+                    <div class="stat-label">Form Feedback (live)</div>
+                    <div id="feedbackContainer"></div>
+                </div>
+
+                <div class="feedback-section">
+                    <div class="stat-label">Personal Suggestions</div>
+                    <div id="suggestionsContainer"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/biceps-form.js"></script>
+    <script src="js/bicep_test.js"></script>
+    <!-- <script src="../config.js"></script> -->
+</body>
+</html>
