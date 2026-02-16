@@ -12,6 +12,39 @@
 
 <body>
     <div class="container">
+
+        <!-- Add RIGHT AFTER <body> in main.html -->
+<div id="instructionModal" class="instruction-overlay">
+    <div class="instruction-card">
+        <h2>🎥 Squats Instructions<br>(Side angle)</h2>
+        <div class="instruction-steps">
+            <div class="step-item">
+                <span class="step-number">1</span>
+                <div><strong>📷 Full Body Visibility</strong><br>Ensure your <strong>complete body</strong> is visible in camera frame</div>
+            </div>
+            <div class="step-item">
+                <span class="step-number">2</span>
+                <div><strong>✅ 10 Side-Facing Reps</strong><br>Perform <strong>exactly 10 reps</strong> facing camera sideways</div>
+            </div>
+            <div class="step-item">
+                <span class="step-number">3</span>
+                <div><strong>🔄 Reps Counting Early?</strong><br>Get in <strong>proper camera sight</strong> and <strong>refresh page</strong></div>
+            </div>
+            <div class="step-item">
+                <span class="step-number">4</span>
+                <div><strong>📝 After 10 Reps</strong><br>Fill popup form completely and <strong>submit data</strong></div>
+            </div>
+            <div class="step-item">
+                <span class="step-number">5</span>
+                <div><strong>📊 Check Feedback</strong><br><strong>Scroll down main page</strong> for your personal form analysis</div>
+            </div>
+        </div>
+        <button id="startCameraBtn" class="start-btn">🚀 Start Camera</button>
+    </div>
+</div>
+
+
+
         <h1>🏋️ Squat Form Corrector (Side angle)</h1>
 
         <div class="main-content">
@@ -63,6 +96,31 @@
     <!-- <script src="../config.js"></script> -->
     <script src="js/squats-form.js"></script>
     <script src="js/squats_test.js"></script>
+
+
+    <script>
+    // Instructions modal - FIXED VERSION
+    document.getElementById('startCameraBtn').addEventListener('click', async () => {
+        // Hide modal FIRST (immediate)
+        document.getElementById('instructionModal').style.display = 'none';
+        
+        // Small delay to ensure modal is fully hidden before starting camera
+        setTimeout(async () => {
+            try {
+                await camera.start();
+                document.getElementById('loading').style.display = 'none';
+            } catch(err) {
+                document.getElementById('loading').textContent = '❌ Camera access denied';
+                console.error('Camera error:', err);
+            }
+        }, 100); // 100ms delay ensures smooth transition
+    });
+
+    // Show on every page load/refresh
+    document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('instructionModal').style.display = 'flex';
+    });
+</script>
     
     
 </body>

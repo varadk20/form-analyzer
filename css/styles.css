@@ -169,3 +169,66 @@ h1 {
         grid-template-columns: 1fr;
     }
 }
+
+
+
+/* Instructions */
+/* Instructions - FIXED COLORS */
+.instruction-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.9); z-index: 2000; display: flex;
+    align-items: center; justify-content: center; padding: 1rem;
+}
+
+.instruction-card {
+    background: #ffffff !important; /* Force white bg */
+    border-radius: 20px; padding: 2rem;
+    max-width: 420px; width: 90%; max-height: 85vh; overflow-y: auto;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+}
+
+.instruction-card h2 {
+    text-align: center; margin-bottom: 1.5rem; 
+    color: #1f2121 !important; /* Dark text */
+    font-size: 24px; font-weight: 700;
+}
+
+.instruction-steps {
+    display: flex; flex-direction: column; gap: 1.2rem; margin-bottom: 1.5rem;
+}
+
+.step-item {
+    display: flex; gap: 12px; align-items: flex-start;
+}
+
+.step-number {
+    width: 36px; height: 36px; 
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white !important; 
+    border-radius: 50%; display: flex; align-items: center;
+    justify-content: center; font-weight: 700; font-size: 16px; flex-shrink: 0;
+}
+
+.step-item div {
+    font-size: 15px; line-height: 1.4;
+    color: #1f2121 !important; /* Dark text for ALL steps */
+}
+
+.step-item strong {
+    color: #28a745 !important; /* Green highlights */
+    font-size: 16px;
+}
+
+.start-btn {
+    width: 100%; padding: 1rem 2rem; 
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white !important; 
+    border: none; border-radius: 12px; font-size: 18px; font-weight: 700;
+    cursor: pointer; box-shadow: 0 8px 25px rgba(40,167,69,0.4);
+    transition: all 0.2s;
+}
+
+.start-btn:hover {
+    transform: translateY(-2px); box-shadow: 0 12px 35px rgba(40,167,69,0.5);
+}
+

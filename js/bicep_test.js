@@ -266,6 +266,12 @@ function computeAndShowEfficiency() {
 }
 
 function onResults(results) {
+
+    // 🔥 PREVENT PROCESSING WHEN INSTRUCTIONS VISIBLE
+    if (document.getElementById('instructionModal').style.display !== 'none') {
+        return; // Skip all processing
+    }
+
     canvasElement.width = videoElement.videoWidth;
     canvasElement.height = videoElement.videoHeight;
 
